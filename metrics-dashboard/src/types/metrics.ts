@@ -154,7 +154,7 @@ export interface DashboardConfig {
 }
 
 // 页面路由类型
-export type PageRoute = 'dashboard' | 'productivity' | 'document-parsing' | 'data-unlocking' | 'qa-metrics' | 'settings';
+export type PageRoute = 'dashboard' | 'productivity' | 'metric-grid' | 'document-parsing' | 'data-unlocking' | 'qa-metrics' | 'settings';
 
 // 模块状态
 export interface ModuleStatus {

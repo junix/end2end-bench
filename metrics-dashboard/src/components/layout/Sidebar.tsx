@@ -9,7 +9,8 @@ import {
   Home,
   Menu,
   X,
-  Activity
+  Activity,
+  Grid3x3
 } from 'lucide-react';
 import { cn } from '@/utils';
 import { useMetricsStore } from '@/store/useMetricsStore';
@@ -34,6 +35,12 @@ const navigationItems: NavigationItem[] = [
     label: 'Productivity',
     icon: <Activity className="w-5 h-5" />,
     description: 'Development productivity metrics'
+  },
+  {
+    id: 'metric-grid',
+    label: '指标网格',
+    icon: <Grid3x3 className="w-5 h-5" />,
+    description: '彩色指标卡片视图'
   },
   {
     id: 'document-parsing',

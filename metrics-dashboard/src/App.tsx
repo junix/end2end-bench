@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Dashboard } from '@/pages/Dashboard';
 import { ProductivityDashboard } from '@/pages/ProductivityDashboard';
+import { MetricGrid } from '@/pages/MetricGrid';
 import { DocumentParsing } from '@/pages/DocumentParsing';
 import { DataUnlocking } from '@/pages/DataUnlocking';
 import { useMetricsStore } from '@/store/useMetricsStore';
@@ -44,6 +45,8 @@ function App() {
         return <Dashboard />;
       case 'productivity':
         return <ProductivityDashboard />;
+      case 'metric-grid':
+        return <MetricGrid />;
       case 'document-parsing':
         return <DocumentParsing />;
       case 'data-unlocking':
