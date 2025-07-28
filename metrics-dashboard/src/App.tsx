@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Dashboard } from '@/pages/Dashboard';
+import { ProductivityDashboard } from '@/pages/ProductivityDashboard';
 import { DocumentParsing } from '@/pages/DocumentParsing';
 import { DataUnlocking } from '@/pages/DataUnlocking';
 import { useMetricsStore } from '@/store/useMetricsStore';
@@ -41,6 +42,8 @@ function App() {
     switch (currentPage) {
       case 'dashboard':
         return <Dashboard />;
+      case 'productivity':
+        return <ProductivityDashboard />;
       case 'document-parsing':
         return <DocumentParsing />;
       case 'data-unlocking':

@@ -8,7 +8,8 @@ import {
   Settings, 
   Home,
   Menu,
-  X
+  X,
+  Activity
 } from 'lucide-react';
 import { cn } from '@/utils';
 import { useMetricsStore } from '@/store/useMetricsStore';
@@ -27,6 +28,12 @@ const navigationItems: NavigationItem[] = [
     label: '总览仪表盘',
     icon: <Home className="w-5 h-5" />,
     description: '系统整体指标概览'
+  },
+  {
+    id: 'productivity',
+    label: 'Productivity',
+    icon: <Activity className="w-5 h-5" />,
+    description: 'Development productivity metrics'
   },
   {
     id: 'document-parsing',
