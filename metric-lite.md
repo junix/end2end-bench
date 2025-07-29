@@ -207,10 +207,10 @@ MTEB是目前最全面的文本嵌入评估基准，涵盖8个任务类别、58�
 | 歧义处理 | ❌ | 需澄清或多视角回答比例 | AmbigQA, ClarQ | – |
 | 答案验证难度 | ❌ | 可自动 vs 需人工评估比例 | 自动评估问题集 | – |
 | **多模态 & 视觉** |||||
-| 跨模态推理 | ☑️ | 需文本‑表格‑图片等信息比例 | MultiModalQA | – |
-| 视觉问答 | ☑️ | 图片 / 图表 / 流程图 QA 准确率 | DocVQA, ChartQA, InfographicVQA | DocVQA |
+| 跨模态推理 | ✅ | 需文本‑表格‑图片等信息比例 | MultiModalQA | – |
+| 视觉问答 | ✅ | 图片 / 图表 / 流程图 QA 准确率 | DocVQA, ChartQA, InfographicVQA | DocVQA |
 | 截图问答 | ❌ | 软件 GUI / 网页截图 QA Acc | ScreenQA, WebSRC | – |
-| 图文关联推理 | ☑️ | OCR 文本 + 图像综合推理占比 | TextVQA, OCR‑VQA | TextVQA |
+| 图文关联推理 | ✅ | OCR 文本 + 图像综合推理占比 | TextVQA, OCR‑VQA | TextVQA |
 | **知识图谱** |||||
 | KG 实体链接 | ❌ | 实体链接准确率 | WikiData5M‑EL, DBpedia Spotlight | DBpedia Spotlight |
 | KG 关系推理 | ❌ | 基于关系推理准确率 | NELL‑995, WN18RR | KGC (LP) |
