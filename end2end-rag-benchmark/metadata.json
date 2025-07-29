@@ -1,0 +1,106 @@
+{
+  "dataset_info": {
+    "name": "End-to-End RAG Benchmark Dataset",
+    "version": "1.0.0",
+    "description": "A comprehensive benchmark dataset for evaluating end-to-end RAG systems from document parsing to question answering",
+    "created_date": "2024-01-01",
+    "last_updated": "2024-01-01",
+    "license": "CC BY-SA 4.0",
+    "language": ["zh", "en", "ja"],
+    "homepage": "https://github.com/your-org/end2end-rag-benchmark"
+  },
+  "statistics": {
+    "total_documents": 10000,
+    "total_qa_pairs": 50000,
+    "document_types": {
+      "pdf": 4000,
+      "word": 2000,
+      "excel": 1500,
+      "powerpoint": 1000,
+      "images": 1500
+    },
+    "document_complexity": {
+      "simple": 3000,
+      "medium": 4000,
+      "complex": 3000
+    },
+    "language_distribution": {
+      "chinese": 4000,
+      "english": 3000,
+      "japanese": 2000,
+      "mixed": 1000
+    },
+    "domain_distribution": {
+      "finance": 2500,
+      "medical": 2500,
+      "legal": 2500,
+      "technical": 2500
+    },
+    "qa_type_distribution": {
+      "factual_retrieval": 15000,
+      "table_qa": 10000,
+      "reasoning": 8000,
+      "summarization": 5000,
+      "multimodal": 7000,
+      "knowledge_graph": 3000,
+      "complex_scenarios": 2000
+    }
+  },
+  "evaluation_metrics": {
+    "parsing": [
+      "text_extraction_accuracy",
+      "table_structure_f1",
+      "image_detection_recall",
+      "ocr_cer",
+      "layout_fidelity"
+    ],
+    "retrieval": [
+      "precision_at_k",
+      "recall_at_k",
+      "mrr",
+      "ndcg",
+      "query_latency"
+    ],
+    "qa": [
+      "exact_match",
+      "f1_score",
+      "rouge_scores",
+      "multi_hop_accuracy",
+      "answer_attribution_accuracy"
+    ]
+  },
+  "baseline_models": {
+    "parsing": [
+      "tesseract_ocr",
+      "paddleocr",
+      "layoutlm"
+    ],
+    "retrieval": [
+      "bm25",
+      "dense_retrieval_dpr",
+      "hybrid_retrieval"
+    ],
+    "qa": [
+      "bert_squad",
+      "gpt3.5_rag",
+      "llama2_rag"
+    ]
+  },
+  "data_splits": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "file_structure": {
+    "raw_documents": "Original documents in various formats",
+    "parsed_data": "Parsed and structured data from documents",
+    "qa_sets": "Question-answer pairs organized by type",
+    "annotations": "Ground truth annotations for evaluation",
+    "evaluation_scripts": "Scripts for computing evaluation metrics",
+    "baseline_results": "Results from baseline models",
+    "tools": "Utility scripts for data processing"
+  },
+  "citation": {
+    "bibtex": "@dataset{end2end_rag_benchmark,\n  title={End-to-End RAG Benchmark Dataset},\n  author={Your Organization},\n  year={2024},\n  publisher={Your Publisher}\n}"
+  }
+}

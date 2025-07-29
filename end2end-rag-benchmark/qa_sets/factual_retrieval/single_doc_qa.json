@@ -1,0 +1,69 @@
+{
+  "dataset_name": "single_document_factual_qa",
+  "description": "Questions that can be answered by retrieving facts from a single document",
+  "qa_pairs": [
+    {
+      "qa_id": "fact_001",
+      "question": "2023年公司第四季度的营业收入是多少？",
+      "question_type": "factual",
+      "answer": "2023年第四季度营业收入为15.6亿元",
+      "alternative_answers": ["15.6亿元", "十五点六亿元"],
+      "source_documents": ["financial_report_2023_q4.pdf"],
+      "evidence": {
+        "text_snippets": ["根据财务报表显示，2023年第四季度营业收入为15.6亿元，同比增长12.3%"],
+        "tables": [],
+        "images": []
+      },
+      "reasoning_steps": [],
+      "difficulty": "easy",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": false
+      }
+    },
+    {
+      "qa_id": "fact_002",
+      "question": "What is the main conclusion of the research paper regarding climate change impacts?",
+      "question_type": "factual",
+      "answer": "The study concludes that global temperature rise will exceed 1.5°C by 2030 without immediate action",
+      "alternative_answers": ["Global temperature will exceed 1.5°C by 2030", "Temperature rise will surpass 1.5°C within this decade"],
+      "source_documents": ["climate_research_2024.pdf"],
+      "evidence": {
+        "text_snippets": ["Our analysis indicates that without immediate and substantial reduction in greenhouse gas emissions, global temperature rise will exceed 1.5°C by 2030"],
+        "tables": [],
+        "images": ["temperature_projection_chart.png"]
+      },
+      "reasoning_steps": [],
+      "difficulty": "easy",
+      "metadata": {
+        "domain": "technical",
+        "language": "en",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": false
+      }
+    },
+    {
+      "qa_id": "fact_003",
+      "question": "契約書に記載されている納期はいつですか？",
+      "question_type": "factual",
+      "answer": "2024年3月31日",
+      "alternative_answers": ["2024/3/31", "令和6年3月31日"],
+      "source_documents": ["contract_document_jp.pdf"],
+      "evidence": {
+        "text_snippets": ["納期：2024年3月31日までに全ての成果物を納品すること"],
+        "tables": [],
+        "images": []
+      },
+      "reasoning_steps": [],
+      "difficulty": "easy",
+      "metadata": {
+        "domain": "legal",
+        "language": "ja",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "dataset_name": "chart_visual_qa",
+  "description": "Questions requiring understanding and analysis of charts, graphs, and visual data",
+  "qa_pairs": [
+    {
+      "qa_id": "chart_001",
+      "question": "根据销售趋势图，哪个月份的销售额出现了最大跌幅？跌幅是多少？",
+      "question_type": "chart_analysis",
+      "answer": "8月份出现最大跌幅，环比下降23.5%",
+      "alternative_answers": ["8月下降23.5%", "八月份跌幅最大，23.5%"],
+      "source_documents": ["monthly_sales_report.pdf"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": [],
+        "images": ["sales_trend_chart_2023.png"]
+      },
+      "reasoning_steps": [
+        "识别图表中的月度销售数据点",
+        "计算每个月的环比变化",
+        "找出最大的负增长值",
+        "确定对应的月份和跌幅百分比"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": false,
+        "visual_elements": ["line_chart", "trend_analysis"]
+      }
+    },
+    {
+      "qa_id": "chart_002",
+      "question": "Based on the pie chart showing market share, what is the combined market share of the top 3 companies?",
+      "question_type": "chart_analysis",
+      "answer": "The top 3 companies hold 67.8% of the market share combined",
+      "alternative_answers": ["67.8%", "Top 3 companies: 67.8%"],
+      "source_documents": ["market_analysis_q4.pptx"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": [],
+        "images": ["market_share_pie_chart.png"]
+      },
+      "reasoning_steps": [
+        "Identify the top 3 segments in the pie chart",
+        "Extract percentage values for each segment",
+        "Sum the percentages of the top 3 companies"
+      ],
+      "difficulty": "easy",
+      "metadata": {
+        "domain": "finance",
+        "language": "en",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": false,
+        "visual_elements": ["pie_chart", "percentage_calculation"]
+      }
+    },
+    {
+      "qa_id": "chart_003",
+      "question": "散点图显示了产品价格与客户满意度的关系，价格在什么区间时客户满意度最高？",
+      "question_type": "chart_analysis",
+      "answer": "价格在200-300元区间时，客户满意度最高，集中在4.5-4.8分",
+      "alternative_answers": ["200-300元", "200到300元区间满意度最高"],
+      "source_documents": ["product_analysis.pdf"],
+      "evidence": {
+        "text_snippets": ["价格与满意度相关性分析"],
+        "tables": [],
+        "images": ["price_satisfaction_scatter.png"]
+      },
+      "reasoning_steps": [
+        "观察散点图中的数据分布",
+        "识别高满意度（4.5分以上）的数据点",
+        "确定这些数据点对应的价格区间",
+        "总结价格区间范围"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "technical",
+        "language": "zh",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": false,
+        "visual_elements": ["scatter_plot", "correlation_analysis"]
+      }
+    },
+    {
+      "qa_id": "chart_004",
+      "question": "From the stacked bar chart showing quarterly revenue by product category, which category showed consistent growth across all four quarters?",
+      "question_type": "chart_analysis",
+      "answer": "Software Services showed consistent quarter-over-quarter growth throughout the year",
+      "alternative_answers": ["Software Services", "Software Services category"],
+      "source_documents": ["annual_revenue_breakdown.xlsx"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": [],
+        "images": ["quarterly_revenue_stacked_bar.png"]
+      },
+      "reasoning_steps": [
+        "Examine each product category's segment in the stacked bars",
+        "Compare the height of each category across Q1-Q4",
+        "Identify which category increases in every quarter",
+        "Verify no quarter shows a decrease for that category"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "finance",
+        "language": "en",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": false,
+        "visual_elements": ["stacked_bar_chart", "trend_identification"]
+      }
+    }
+  ]
+}

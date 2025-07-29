@@ -1,0 +1,99 @@
+{
+  "dataset_name": "multi_hop_reasoning_qa",
+  "description": "Questions requiring multiple steps of reasoning across different documents or sections",
+  "qa_pairs": [
+    {
+      "qa_id": "hop_001",
+      "question": "张三负责的项目在2023年的总预算是多少？需要从员工信息找到张三负责的项目，再从项目预算表中查找。",
+      "question_type": "multi_hop_reasoning",
+      "answer": "张三负责的'智能客服系统'项目2023年总预算为850万元",
+      "alternative_answers": ["850万元", "8500000元"],
+      "source_documents": ["employee_projects.xlsx", "project_budgets_2023.pdf"],
+      "evidence": {
+        "text_snippets": [
+          "张三 - 项目经理 - 负责项目：智能客服系统",
+          "智能客服系统项目年度预算：850万元"
+        ],
+        "tables": ["employee_project_mapping", "project_budget_table"],
+        "images": []
+      },
+      "reasoning_steps": [
+        "在员工项目对应表中查找张三的信息",
+        "识别张三负责的项目名称为'智能客服系统'",
+        "在项目预算表中查找'智能客服系统'的预算信息",
+        "提取2023年的总预算金额"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": true,
+        "hop_count": 2
+      }
+    },
+    {
+      "qa_id": "hop_002",
+      "question": "Which supplier provides components for the product with the highest customer satisfaction rating, and what is their delivery time?",
+      "question_type": "multi_hop_reasoning",
+      "answer": "TechParts Inc. supplies components for the ProMax series (highest rating: 4.8/5) with a delivery time of 14 days",
+      "alternative_answers": ["TechParts Inc., 14 days delivery", "TechParts Inc. - 2 weeks"],
+      "source_documents": ["product_ratings.pdf", "product_components.xlsx", "supplier_info.docx"],
+      "evidence": {
+        "text_snippets": [
+          "ProMax series - Customer Rating: 4.8/5 (Highest)",
+          "ProMax series components: CPU-X200, RAM-8G, SSD-500",
+          "TechParts Inc. - Supplies: CPU-X200, Delivery: 14 days"
+        ],
+        "tables": ["product_ratings", "component_mapping", "supplier_details"],
+        "images": []
+      },
+      "reasoning_steps": [
+        "Identify product with highest customer satisfaction from ratings",
+        "Find components used in that product",
+        "Match components to suppliers",
+        "Extract delivery time for the identified supplier"
+      ],
+      "difficulty": "hard",
+      "metadata": {
+        "domain": "technical",
+        "language": "en",
+        "requires_numerical_computation": false,
+        "requires_multi_hop": true,
+        "hop_count": 3
+      }
+    },
+    {
+      "qa_id": "hop_003",
+      "question": "根据公司组织架构和财务报表，找出营收最高部门的负责人去年获得的绩效奖金是多少？",
+      "question_type": "multi_hop_reasoning",
+      "answer": "销售部门营收最高（45.6亿元），负责人李明去年绩效奖金为128万元",
+      "alternative_answers": ["李明，128万元", "销售部李明，绩效奖金128万"],
+      "source_documents": ["org_structure.pdf", "department_revenue.xlsx", "executive_compensation.pdf"],
+      "evidence": {
+        "text_snippets": [
+          "销售部门2023年营收：45.6亿元",
+          "销售部门负责人：李明",
+          "李明 - 2023年绩效奖金：128万元"
+        ],
+        "tables": ["department_revenue_2023", "org_chart", "compensation_table"],
+        "images": ["organization_chart.png"]
+      },
+      "reasoning_steps": [
+        "从部门营收表中找出营收最高的部门",
+        "确定销售部门营收最高（45.6亿元）",
+        "从组织架构中找到销售部门的负责人",
+        "确定负责人为李明",
+        "从高管薪酬表中查找李明的绩效奖金"
+      ],
+      "difficulty": "hard",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": true,
+        "hop_count": 3
+      }
+    }
+  ]
+}

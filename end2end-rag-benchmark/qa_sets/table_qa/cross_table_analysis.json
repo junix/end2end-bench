@@ -1,0 +1,86 @@
+{
+  "dataset_name": "cross_table_analysis_qa",
+  "description": "Questions requiring analysis across multiple tables or complex table operations",
+  "qa_pairs": [
+    {
+      "qa_id": "table_001",
+      "question": "比较2022年和2023年各季度的销售额增长率，哪个季度增长最快？",
+      "question_type": "table_analysis",
+      "answer": "2023年第二季度增长最快，增长率为23.5%",
+      "alternative_answers": ["Q2 2023增长最快", "第二季度增长率23.5%最高"],
+      "source_documents": ["sales_report_2022_2023.xlsx"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": ["sales_summary_2022", "sales_summary_2023"],
+        "images": []
+      },
+      "reasoning_steps": [
+        "从2022年销售汇总表提取各季度数据",
+        "从2023年销售汇总表提取各季度数据",
+        "计算每个季度的同比增长率",
+        "比较所有季度的增长率找出最大值"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": false,
+        "table_operations": ["cross_table_join", "percentage_calculation", "comparison"]
+      }
+    },
+    {
+      "qa_id": "table_002",
+      "question": "Which product category has the highest profit margin when combining data from the cost table and revenue table?",
+      "question_type": "table_analysis",
+      "answer": "Software products have the highest profit margin at 78.3%",
+      "alternative_answers": ["Software category with 78.3% margin", "Software products - 78.3%"],
+      "source_documents": ["product_financials.xlsx"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": ["product_costs", "product_revenues"],
+        "images": []
+      },
+      "reasoning_steps": [
+        "Extract cost data for each product category",
+        "Extract revenue data for each product category",
+        "Calculate profit margin: (Revenue - Cost) / Revenue * 100",
+        "Compare margins across all categories"
+      ],
+      "difficulty": "medium",
+      "metadata": {
+        "domain": "finance",
+        "language": "en",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": false,
+        "table_operations": ["join", "arithmetic", "aggregation"]
+      }
+    },
+    {
+      "qa_id": "table_003",
+      "question": "根据员工信息表和部门预算表，计算IT部门的人均预算是多少？",
+      "question_type": "table_analysis",
+      "answer": "IT部门人均预算为12.5万元",
+      "alternative_answers": ["125000元/人", "每人12.5万元"],
+      "source_documents": ["hr_department_data.xlsx"],
+      "evidence": {
+        "text_snippets": [],
+        "tables": ["employee_roster", "department_budget"],
+        "images": []
+      },
+      "reasoning_steps": [
+        "从员工信息表统计IT部门员工总数",
+        "从部门预算表获取IT部门总预算",
+        "计算人均预算：总预算 ÷ 员工数"
+      ],
+      "difficulty": "easy",
+      "metadata": {
+        "domain": "finance",
+        "language": "zh",
+        "requires_numerical_computation": true,
+        "requires_multi_hop": false,
+        "table_operations": ["filter", "count", "division"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+refactored-benchmark (建议添加的关键组件)
+├── documents
+│  ├── [existing folders...]
+│  ├── mixed-format/               # 新增：混合格式文档
+│  ├── multilingual/               # 新增：多语言文档
+│  │  ├── chinese/
+│  │  ├── japanese/
+│  │  └── mixed-language/
+│  └── complexity-levels/          # 新增：复杂度分级
+│
+├── parser
+│  ├── [existing: ocr, table-parser]
+│  ├── layout-parser/              # 新增：版面分析
+│  ├── formula-parser/             # 新增：公式解析
+│  ├── entity-extractor/           # 新增：实体抽取
+│  └── multimodal-parser/          # 新增：多模态解析
+│
+├── qa
+│  ├── [existing: reasoning]
+│  ├── factual-retrieval/          # 新增：事实检索
+│  ├── table-qa/                   # 新增：表格问答
+│  ├── summarization/              # 新增：摘要
+│  ├── multimodal-qa/              # 新增：多模态问答
+│  ├── knowledge-graph-qa/         # 新增：知识图谱问答
+│  ├── complex-scenarios/          # 新增：复杂场景
+│  └── conversational/             # 新增：对话式问答
+│
+├── retrieve                       # 完善整个检索模块
+│  ├── sparse-retrieval/           # 新增：稀疏检索
+│  ├── dense-retrieval/            # 新增：稠密检索
+│  ├── hybrid-retrieval/           # 新增：混合检索
+│  ├── knowledge-graph-retrieval/  # 新增：图检索
+│  ├── multimodal-retrieval/       # 新增：多模态检索
+│  └── cross-lingual/              # 新增：跨语言检索
+│
+├── knowledge-graph/               # 新增：知识图谱模块
+│  ├── construction/
+│  ├── reasoning/
+│  └── integration/
+│
+├── evaluation/                    # 新增：评估框架
+│  ├── end2end/
+│  ├── parsing/
+│  ├── retrieval/
+│  ├── qa/
+│  └── leaderboard/
+│
+├── baselines/                     # 新增：基线模型
+│  ├── parsing/
+│  ├── retrieval/
+│  ├── qa/
+│  └── end2end/
+│
+├── annotations/                   # 新增：标注数据
+│  ├── parsing-ground-truth/
+│  ├── retrieval-relevance/
+│  └── qa-annotations/
+│
+├── tools/                         # 新增：工具集
+│  ├── data-generation/
+│  ├── data-validation/
+│  ├── visualization/
+│  └── conversion/
+│
+├── configs/                       # 新增：配置文件
+├── results/                       # 新增：实验结果
+├── docs/                          # 新增：文档
+└── [新增文件: requirements.txt, CITATION.cff]
